@@ -13,8 +13,8 @@ final class SvenPetersen extends SymfonyDeveloper implements DeveloperInterface
     use Twig;
     use Stimulus;
 
-    public const FIRST_NAME = 'Sven';
-    public const LAST_NAME = 'Petersen';
+    public const string FIRST_NAME = 'Sven';
+    public const string LAST_NAME = 'Petersen';
     
     public function __construct(
         private \DateTimeImmutable $birthDate = new \DateTimeImmutable('1990-03-04'),
