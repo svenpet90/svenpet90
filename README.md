@@ -1,16 +1,35 @@
 ### Hi there 👋
 
-<!--
-**svenpet90/svenpet90** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+```php
+<?php
 
-Here are some ideas to get you started:
+namespace App\Developer;
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+#[AsHuman]
+final class SvenPetersen extends SymfonyDeveloper implements DeveloperInterface
+{
+    use Symfony;
+    use TYPO3;
+    use Twig;
+    use Stimulus;
+
+    public const FIRST_NAME = 'Sven';
+    public const LAST_NAME = 'Petersen';
+    
+    public function __construct(
+        private \DateTimeImmutable $birthDate = new \DateTimeImmutable('1990-03-04'),
+        private string $email = 'sven@hardanders.de',
+        private array $currentCompanies = [
+            'Dauskonzept GmbH'          => 'Webdeveloper',        // https://dauskonzept.de
+            'HardAnders GbR' => 'Founder & Developer', // https://hardanders.de
+        ],
+        private string $currentCity = 'Schafflund, Germany'
+    ) {
+    }
+    
+    public function isOpenForFreelanceWork(): bool
+    {
+        return true;
+    }
+}
+```
