@@ -12,6 +12,7 @@ final class SvenPetersen extends SymfonyDeveloper implements DeveloperInterface
     use TYPO3;
     use Twig;
     use Stimulus;
+    use HotwiredTurbo;
 
     public const string FIRST_NAME = 'Sven';
     public const string LAST_NAME = 'Petersen';
